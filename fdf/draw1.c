@@ -12,11 +12,10 @@
 
 #include "fdf.h"
 
-void draw_right(t_fdfinfo *info, int x, int y, int color)
+void	draw_right(t_fdfinfo *info, int x, int y)
 {
 	int row;
 	int col;
-
 
 	row = 0;
 	while (row < y)
@@ -26,12 +25,12 @@ void draw_right(t_fdfinfo *info, int x, int y, int color)
 		{
 			draw_line(info->point[row][col], info->point[row][col + 1], info);
 			col++;
-		}		
+		}
 		row++;
 	}
 }
 
-void draw_down(t_fdfinfo *info, int x, int y, int color)
+void	draw_down(t_fdfinfo *info, int x, int y)
 {
 	int row;
 	int col;
@@ -44,7 +43,7 @@ void draw_down(t_fdfinfo *info, int x, int y, int color)
 		{
 			draw_line(info->point[row][col], info->point[row + 1][col], info);
 			col++;
-		}		
+		}
 		row++;
 	}
 }

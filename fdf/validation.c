@@ -12,7 +12,7 @@
 
 #include "fdf.h"
 
-void ft_error(char *str)
+void	ft_error(char *str)
 {
 	ft_putendl(str);
 	exit(0);
@@ -28,20 +28,21 @@ int		ft_findw(char **coord)
 	return (x);
 }
 
-void checkline(char *line)
+void	checkline(char *line)
 {
 	int i;
 
 	i = 0;
-
 	if (!line[i])
-		ft_error ("Error: line read");
+		ft_error("Error: line read");
+	if (ft_strlen(&line[i]) <= 2)
+		ft_error("Error: too little line");
 	while (line[i] != '\0')
 	{
 		if (ft_isalpha(line[i]))
-			ft_error ("Error: alphabet chars found");
+			ft_error("Error: alphabet chars found");
 		if ((line[i] == '-' && !(ft_isdigit(line[i + 1]))) || line[i] == '\t')
-			ft_error ("Error: forbidden chars");
-			i++;
+			ft_error("Error: forbidden chars");
+		i++;
 	}
 }

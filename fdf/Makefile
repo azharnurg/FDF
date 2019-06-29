@@ -22,6 +22,8 @@ SRCS	= main.c \
 			draw.c\
 			draw1.c\
 			validation.c\
+			color.c\
+			rotation.c\
 
 OBJ 	= ${SRCS:.c=.o}
 INCLUDE = -I fdf.h -L ./libft -lft
